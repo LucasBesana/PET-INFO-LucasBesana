@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Petinfo - Feed</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../src/styles/reset.css" />
+    <link rel="stylesheet" href="../../src/styles/globalStyles.css" />
+    <link rel="stylesheet" href="../../src/styles/feed.css" />
+    <link rel="stylesheet" href="../styles/dialog.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
+    <!-- SCRIPTS -->
+    <script type="module" src="../scripts/feed.js" defer></script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__container">
+        <h2 class="title3 header__title bold">Petinfo</h2>
+        <nav class="user-nav__container">
+          <div class="user__action">
+            <button id="user__newpost" class="btn btn--brand btn--large text3">
+              Criar publicação
+            </button>
+            <img class="user__image" src="" alt="" />
+          </div>
+          <div class="user__logout hidden">
+            <h2 class="user__uniquename text3 bolder" id="username"></h2>
+            <button class="text4 logout__button">
+              <div class="logout__icon"></div>
+              Sair da conta
+            </button>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <main class="main">
+      <h1 class="feed__title text2 bolder">Feed</h1>
+
+      <!-- POSTS -->
+      <section class="posts">
+        <!-- Aqui serão renderizados os posts -->
+      </section>
+    </main>
+    <dialog class="modal__controller">
+      <div class="modal__content">
+      </div>
+    </dialog>
+
+    <dialog class="modal__edition" id="modal__edition">
+      <div class="modal__edition__content">
+          <header>
+              <h2>Edição</h2>
+              <button class="close-cancel__button">X</button>
+          </header>
+          <div class="edition__inputs">
+              <div id="edition__div__title">
+                  <p>Título do post</p>
+                  <input type="text" id="edit__title">
+              </div>
+              <div id="edition__div__content">
+                  <p>Conteúdo do post</p>
+                  <textarea name="" id="edit__content" cols="30" rows="10"></textarea>
+              </div>
+          </div>
+          <footer class="modal__edition__footer">
+              <button class="close-cancel__button">Cancelar</button>
+              <button class="confirm__button">Salvar Alterações</button>
+          </footer>
+      </div>
+  </dialog>
+  <dialog class="modal__delete">
+      <section>
+          <header class="modal__delete__header">
+              <p>Confirmação de Exclusão</p>
+              <button class="close-cancel__button" id="close__delete__modal">X</button>
+          </header>
+          <div class="modal__delete__content">
+              <h2>Tem certeza que deseja excluir esse post?</h2>
+              <p>Essa ação não poderá ser desfeita, então pedimos que tenha cautela antes de concluir</p>
+          </div>
+          <footer class="modal__delete__footer">
+              <button class="close-cancel__button" id="cancel__delete__modal">Cancelar</button>
+              <button id="confirm__delete__button">Sim, excluir esse post</button>
+          </footer>
+      </section>
+  </dialog>
+
+  
+<dialog id="new__post">
+  <section class="new__post__content">
+      <header>
+          <h1>Criando novo post</h1>
+          <button id="close__newPost" class="close-cancel__button">X</button>
+      </header>
+      <main>
+          <div class="newPost__title">
+              <label for="">Título do Post</label>
+              <input id="new__post__title"type="text" placeholder="Digite o título aqui...">
+          </div>
+          <div class="newPost__content">
+              <label for="">Conteúdo do Post</label>
+              <textarea name="" id="new__post__content" cols="30" rows="10" placeholder="Desenvolva o conteúdo do post aqui..."></textarea>
+          </div>
+      </main>
+      <footer>
+          <button id="cancel__newPost"class="close-cancel__button">Cancelar</button>
+          <button id="publish__newPost" class="confirm__button">Publicar</button>
+      </footer>
+  </section>
+</dialog>
+    </body>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+</html>
